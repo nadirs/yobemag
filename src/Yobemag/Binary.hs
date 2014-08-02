@@ -1,4 +1,10 @@
-module Yobemag.Binary where
+module Yobemag.Binary
+    ( Word
+    , Byte
+    , highByte
+    , lowByte
+    , toWord
+    ) where
 
 import qualified Data.Word as W
 import Data.Bits
@@ -6,13 +12,12 @@ import Data.Bits
 
 type Word = W.Word16
 type Byte = W.Word8
-type Flag = Bool
 
-msb :: Word -> Byte
-msb = fromIntegral . (`shiftR` 8)
+highByte :: Word -> Byte
+highByte = fromIntegral . (`shiftR` 8)
 
-lsb :: Word -> Byte
-lsb = fromIntegral . (.&. 0xff)
+lowByte :: Word -> Byte
+lowByte = fromIntegral . (.&. 0xff)
 
 -- arguments in little endian order
 toWord :: Byte -> Byte -> Word
