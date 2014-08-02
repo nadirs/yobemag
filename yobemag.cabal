@@ -16,7 +16,10 @@ extra-source-files:     README.md
 cabal-version:          >=1.10
 
 library
-  exposed-modules:      Yobemag, Yobemag.Binary, Yobemag.CPU.Registers
+  exposed-modules:      Yobemag
+                      , Yobemag.Binary
+                      , Yobemag.CPU.Registers
+                      , Yobemag.CPU.Asm
   -- other-modules:
   -- other-extensions:
   build-depends:        base >=4.7 && <4.8
